@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <script src="https://cdn.jsdelivr.net/npm/vconsole@3.15.1/dist/vconsole.min.js"></script>
+    <script>
+        var vConsole = new window.VConsole();
+    </script>
+
     <script type="importmap">
     {
         "imports": {
@@ -16,6 +21,14 @@
 <body>
     <canvas id="app"></canvas>
 
-    <script type="module" src="game.js"></script>
+    <script>
+        // Wait 1 second for vConsole to wake up, THEN load the game
+        setTimeout(() => {
+            let script = document.createElement('script');
+            script.type = 'module';
+            script.src = 'game.js';
+            document.body.appendChild(script);
+        }, 1000);
+    </script>
 </body>
 </html>
