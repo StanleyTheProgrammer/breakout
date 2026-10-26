@@ -1,0 +1,15 @@
+import * as pc from "playcanvas";
+
+const canvas = document.getElementById("app")
+const app = new pc.Application(canvas);
+app.start();
+
+const box = new pc.Entity('Box');
+box.addComponent('model', { type: 'box' });
+app.root.addChild(box);
+
+const camera = new pc.Entity('Camera');
+camera.addComponent('camera');
+camera.setPosition(0, 2, 5); // Move it up 2, back 5
+camera.lookAt(0, 0, 0);      // Look at the box
+app.root.addChild(camera);
