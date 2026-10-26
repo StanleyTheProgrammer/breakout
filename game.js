@@ -1,10 +1,5 @@
 import * as pc from "playcanvas";
 
-const canvas = document.getElementById("app")
-const app = new pc.Application(canvas);
-app.start();
-import * as pc from "playcanvas";
-
 const canvas = document.getElementById("app");
 const app = new pc.Application(canvas);
 
